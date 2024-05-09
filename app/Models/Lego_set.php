@@ -10,6 +10,8 @@ class Lego_set extends Model
     use HasFactory;
 
     protected  $fillable = [
-
+        'serial_number',
+        'name',
+        'ean'
     ] ;
 }

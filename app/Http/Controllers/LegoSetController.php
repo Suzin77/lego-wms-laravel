@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreLegoSetRequest;
 use App\Models\Lego_set;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use JetBrains\PhpStorm\NoReturn;
 
 class LegoSetController extends Controller
 {
@@ -13,7 +15,9 @@ class LegoSetController extends Controller
      */
     public function index()
     {
-        Lego_set::all();
+        $lego_sets = Lego_set::all();
+
+        return view('lego_set.index', compact('lego_sets'));
 
     }
 
@@ -27,11 +31,17 @@ class LegoSetController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     * @param Request $request
+     * @param StoreLegoSetRequest $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    #[NoReturn] public function store(StoreLegoSetRequest $request)
     {
-        //
+        $data = $request->all();
+        $lego_set = Lego_set::create($data);
+        $lego_set->save();
+
+        return redirect('/sets');
+
     }
 
     /**
