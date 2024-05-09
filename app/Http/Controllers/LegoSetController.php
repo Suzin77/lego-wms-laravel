@@ -50,7 +50,8 @@ class LegoSetController extends Controller
      */
     public function show(Lego_set $lego_set)
     {
-        //
+
+        return view("lego_set.show", compact('lego_set'));
     }
 
     /**
