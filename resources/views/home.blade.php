@@ -10,11 +10,17 @@
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                            Session status is: {{ session('status') }}
+
                         </div>
                     @endif
-
                     {{ __('You are logged in!') }}
+                    <div>
+                        <p class="p-lg-3">Dodaj zestaw LEGO do katalogu.</p>
+
+                        <a class="btn btn-primary" href="{{route('sets.create')}}">Create</a>
+
+                    </div>
                 </div>
             </div>
         </div>

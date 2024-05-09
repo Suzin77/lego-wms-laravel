@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Lego_set;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class LegoSetController extends Controller
 {
@@ -12,7 +13,8 @@ class LegoSetController extends Controller
      */
     public function index()
     {
-        //
+        Lego_set::all();
+
     }
 
     /**
@@ -20,11 +22,12 @@ class LegoSetController extends Controller
      */
     public function create()
     {
-        //
+        return view('lego_set.create');
     }
 
     /**
      * Store a newly created resource in storage.
+     * @param Request $request
      */
     public function store(Request $request)
     {
@@ -33,6 +36,7 @@ class LegoSetController extends Controller
 
     /**
      * Display the specified resource.
+     * @param Lego_set $lego_set
      */
     public function show(Lego_set $lego_set)
     {
