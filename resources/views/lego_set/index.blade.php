@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('LEGO sets list') }}</div>
                 <div class="card-body">
                 <div>        
                     <a class="btn btn-primary" href="{{route('sets.create')}}">Dodaj nowy</a>

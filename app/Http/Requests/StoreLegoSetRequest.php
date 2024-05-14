@@ -22,7 +22,7 @@ class StoreLegoSetRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'serial_number' => 'required'
+            'serial_number' => 'required|unique:lego_sets,serial_number'
         ];
     }
 }

@@ -35,13 +35,18 @@
                             @csrf
                             <div class="form-group">
                                 <label for="serial_number">Serial number:</label>
-                                <input type="number" class="form-control" id="serial_number" name="serial_number" required>
+                                <input type="number" class="form-control" id="serial_number" name="serial_number" value="{{old('serial_number')}}" required>
+                                @error('serial_number')
+                                    <div class="alert alert-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
+                            <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
 
                             <label for="ean">Ean</label>
-                            <input type="text" class="form-control" id="ean" name="ean" >
+                            <input type="text" class="form-control" id="ean" name="ean" value="{{old('ean')}}">
 
                             <button type="submit" class="btn btn-primary">Create</button>
                         </form>
