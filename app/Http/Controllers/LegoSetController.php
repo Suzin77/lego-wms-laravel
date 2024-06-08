@@ -34,7 +34,7 @@ class LegoSetController extends Controller
      * @param StoreLegoSetRequest $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    #[NoReturn] public function store(StoreLegoSetRequest $request)
+    public function store(StoreLegoSetRequest $request)
     {
         $data = $request->all();
         $lego_set = Lego_set::create($data);
