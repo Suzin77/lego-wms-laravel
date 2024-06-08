@@ -47,6 +47,11 @@
 
                             <label for="ean">Ean</label>
                             <input type="text" class="form-control" id="ean" name="ean" value="{{old('ean')}}">
+                            @error('ean')
+                            <div class="alert alert-danger">
+                                {{ $message }}
+                            </div>
+                        @enderror
 
                             <button type="submit" class="btn btn-primary">Create</button>
                         </form>
